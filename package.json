@@ -1,0 +1,30 @@
+{
+  "name": "cubetube",
+  "version": "1.0.0",
+  "description": "A youtube video downloader",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
+  "keywords": [
+    "CubeTube",
+    "Download",
+    "Youtube",
+    "Videos",
+    "Playlist"
+  ],
+  "author": "Anis Bouzahar",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "dependencies": {}
+}
