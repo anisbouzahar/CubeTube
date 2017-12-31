@@ -73,7 +73,7 @@ const scripts = [
 //create file path for each , so we use for our excludes and includes where needed
 let style_paths = styles.map(style_src => path.join(process.cwd(), style_src));
 function getPlugins() {
-  var plugins = [];
+  let plugins = [];
 
   // Always expose NODE_ENV to webpack, you can now use `process.env.NODE_ENV`
   // inside your code for any environment checks; UglifyJS will automatically
@@ -182,6 +182,7 @@ function getPlugins() {
       "main"
     ]
 }));
+
   plugins.push(new SourceMapDevToolPlugin({
     "filename": "[file].map[query]",
     "moduleFilenameTemplate": "[resource-path]",
@@ -307,7 +308,7 @@ module.exports = {
         "use": ["html-loader"]
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|json|xml|ico|cur|ani)$/,
+        test: /\.(png|jpg|gif|svg|eot|otf|ttf|woff|woff2|json|xml|ico|cur|ani)$/,
         "use": ["file-loader?name=[path][name].[ext]"]
       },
       {

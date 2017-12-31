@@ -24,9 +24,13 @@ function createWindow() {
     frame: false,
     transparent: true,
     resizable:false,
-    icon: path.join(__dirname, '/src/app/assets/icons/CubeTube.png')
+    icon: path.join(__dirname, '/favicon.png')
   });
-console.log('path :' ,path.join(__dirname, '/src/app/assets/icons/CubeTube.png'));
+
+  let nodeConsole = require('console');
+  let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
+  myConsole.log('Hello World!',path.join(__dirname, ''));
+
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
 
@@ -63,6 +67,7 @@ try {
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
+
     if (win === null) {
       createWindow();
     }
