@@ -97,6 +97,15 @@
         }
       }
 
+
+    }
+    #toggle-drop-down-menu{
+      -webkit-app-region: no-drag;
+
+      cursor: pointer;
+
+
+
     }
 
   }
@@ -109,7 +118,7 @@
   #player {
     background-color: rgba(255, 255, 255, 0.20);
     flex-basis: 13%;
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
 
   }

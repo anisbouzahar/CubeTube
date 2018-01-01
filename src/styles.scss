@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+$color_pink:#f63c6b;
+$gradient_accent:-webkit-linear-gradient(left, rgba(218, 82, 58, 1) 0%, rgba(246, 60, 107, 1) 100%);
+$gradient_accent_reverse:-webkit-linear-gradient(right, rgba(218, 82, 58, 1) 0%, rgba(246, 60, 107, 1) 100%);
 html, body {
   background-color: transparent;
   height: 100%;
@@ -7,5 +10,7 @@ html, body {
   cursor: default;
   box-sizing: border-box;
   border-radius: 6px;
+  -webkit-font-smoothing: antialiased;
+
 
 }

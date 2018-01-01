@@ -19,15 +19,15 @@
         <hr/>
       </ul>
     </div>
-    <img src="../../assets/icons/SVG/arrow_down.svg">
-
+    <img id="toggle-drop-down-menu" src="../../assets/icons/SVG/arrow_down.svg" (click)="openMenu()">
+    <div id="drop-down-menu"></div>
   </div>
   <div id="content">
     content
 
   </div>
   <div id="player">
-    the player
+    <app-player></app-player>
   </div>
 
 

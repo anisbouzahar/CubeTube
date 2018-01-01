@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 32 32">
+  <defs>
+    <style>.\32 6da2da1-730d-44a9-b75d-6a1509e256e9{fill:#fff;}.\39 3c57155-1a26-4266-b88d-c3ef4dc97f2f{fill:#f63c6b;}
+    </style>
+  </defs>
+  <title>Pause</title>
+  <g id="ed533258-8239-4de0-b40c-524994469aa2" data-name="Layer 2">
+    <g id="faf3aa63-4c64-413c-bb46-311f134bc4f5" data-name="Layer 1">
+      <path shape-rendering="optimizeQuality"  class="26da2da1-730d-44a9-b75d-6a1509e256e9" d="M16,0A16,16,0,1,0,32,16,16.00008,16.00008,0,0,0,16,0Z"/>
+      <path shape-rendering="optimizeQuality"  class="93c57155-1a26-4266-b88d-c3ef4dc97f2f"
+            d="M13.70677,22.81188V9.18812a.63366.63366,0,1,0-1.26732,0V22.81188a.63366.63366,0,1,0,1.26732,0Z"/>
+      <path shape-rendering="optimizeQuality"  class="93c57155-1a26-4266-b88d-c3ef4dc97f2f"
+            d="M19.56055,22.81188V9.18812a.63366.63366,0,1,0-1.26732,0V22.81188a.63366.63366,0,1,0,1.26732,0Z"/>
+    </g>
+  </g>
+</svg>

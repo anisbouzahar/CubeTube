@@ -20,16 +20,15 @@ function createWindow() {
     x: size.width/2,
     y: size.height/2,
     width: 962,
-    height: 584,
+    height: 586,
     frame: false,
     transparent: true,
     resizable:false,
     icon: path.join(__dirname, '/favicon.png')
   });
 
-  let nodeConsole = require('console');
-  let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
-  myConsole.log('Hello World!',path.join(__dirname, ''));
+  // let nodeConsole = require('console');
+  // let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
