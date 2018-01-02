@@ -2,7 +2,7 @@ import {
   Component, Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit,
   ViewChild
 } from '@angular/core';
-import {selector} from "rxjs/operator/publish";
+import {selector} from 'rxjs/operator/publish';
 
 @Component({
   selector: 'app-player',
@@ -11,7 +11,7 @@ import {selector} from "rxjs/operator/publish";
 })
 export class PlayerComponent implements OnInit {
 
-  ///player properties///
+  // player properties
   @Input() paused: boolean;
 
 
@@ -23,12 +23,12 @@ export class PlayerComponent implements OnInit {
   @Input() total: number;
   @Input() current: number;
   @Input() volumeLvl: number;
-  volumeOn:boolean=true;
+  @Input()volumeOn = true;
   progressPinDown: boolean;
   volumeLvlChange: boolean;
 
   @ViewChild('progress', {read: ElementRef}) progressBar: ElementRef;
-  @ViewChild('volumeLvl', {read: ElementRef}) volumeLvlRef:ElementRef;
+  @ViewChild('volumeLvl', {read: ElementRef}) volumeLvlRef: ElementRef;
 
   constructor() {
 
@@ -41,10 +41,10 @@ export class PlayerComponent implements OnInit {
       console.log(' event', event);
       this.progressBar.nativeElement.style.width = event.clientX < 968 ? ((event.clientX / 968) * 100).toString() + '%' : '100%'
     }
-    // if(this.volumeLvlChange){
-    //   console.log(this.volumeLvlRef.nativeElement.offsetLeft);
-    //   this.volumeLvlRef.nativeElement.style.width=event.clientX<757 ? ((event.clientX/757)*100).toString()+'%': '100%'
-    // }
+    if (this.volumeLvlChange) {
+      console.log(this.volumeLvlRef.nativeElement.offsetLeft);
+      this.setVolumeLevel(event);
+    }
 
   }
 
@@ -58,6 +58,9 @@ export class PlayerComponent implements OnInit {
     if (this.progressPinDown) {
       console.log(' mouseup', event);
       this.progressPinDown = false;
+    }
+    if (this.volumeLvlChange) {
+      this.volumeLvlChange = false;
     }
 
   }
@@ -73,7 +76,7 @@ export class PlayerComponent implements OnInit {
   }
 
   pinUp(event) {
-    console.log("pin up");
+    console.log('pin up');
     this.progressPinDown = false;
 
 
@@ -99,24 +102,26 @@ export class PlayerComponent implements OnInit {
   }
 
   setVolumeLevel(event) {
-    if(this.volumeLvlChange){
+    if (this.volumeLvlChange) {
       console.log(event);
-      if(event.clientX<=this.volumeLvlRef.nativeElement.offsetLeft+3)
-      {
-        this.volumeLvlRef.nativeElement.style.width='0%';
-        this.volumeLvl=0;
-        this.volumeOn=false;
+      if (event.clientX <= this.volumeLvlRef.nativeElement.offsetLeft + 3) {
+        this.volumeLvlRef.nativeElement.style.width = '0%';
+        this.volumeLvl = 0;
+        this.volumeOn = false;
+        console.log(this.volumeOn)
       }
-      else if(event.clientX>90+this.volumeLvlRef.nativeElement.offsetLeft-3){
+      else if (event.clientX > 90 + this.volumeLvlRef.nativeElement.offsetLeft - 3) {
 
-        this.volumeLvlRef.nativeElement.style.width='100%';
-        this.volumeLvl=100;
-        this.volumeOn=true;
+        this.volumeLvlRef.nativeElement.style.width = '100%';
+        this.volumeLvl = 100;
+        this.volumeOn = true;
+        console.log(this.volumeOn)
 
 
-      }else{
-        this.volumeLvlRef.nativeElement.style.width=(((event.clientX-this.volumeLvlRef.nativeElement.offsetLeft)/90)*100).toString()+'%';
-        this.volumeOn=true;
+      } else {
+        this.volumeLvlRef.nativeElement.style.width = (((event.clientX - this.volumeLvlRef.nativeElement.offsetLeft) / 90) * 100)
+          .toString() + '%';
+        this.volumeOn = true;
 
 
       }

@@ -1,4 +1,5 @@
 @import "../../../styles.scss";
+
 @font-face {
   font-family: Roboto ligh;
   src: url('../../../assets/fonts/Roboto-Thin.ttf');
@@ -13,15 +14,15 @@
   height: 98%;
   //resetting the default behaviour
   button {
-    margin:0;
-    border:0;
-    padding:0;
-    display:inline-block;
-    vertical-align:middle;
-    white-space:normal;
-    background:none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
     outline: none;
-    line-height:1;
+    line-height: 1;
 
   }
 
@@ -67,7 +68,7 @@
         border: none;
         background-color: $color_pink;
         align-self: center;
-        &:active{
+        &:active {
           background-color: #f0705d;
           transition: background-color 0.1s linear;
         }
@@ -78,7 +79,7 @@
         transition: background-size .3s ease-in;
 
       }
-      &:active{
+      &:active {
         background-size: 100% auto;
         transition: background-size .3s ease-in;
       }
@@ -100,17 +101,121 @@
     }
     .thumbnail {
       flex-basis: 10%;
+      padding:2px ;
+      margin-left: 4px;
+
 
     }
     .info {
       flex-basis: 23%;
+      margin-left:4px ;
+      span{
+        color: white;
+        font: {
+          family: "Roboto light";
+          size: 1em;
+
+        };
+        display: block;
+        &.author{
+          display: inline;
+          border-right: 1px solid rgba(255,255,255,0.6);
+          font-family:  Roboto ligh;
+          color: rgba(255,255,255,0.6);
+        }
+        &.views{
+          padding-left: 4px;
+          display:inline ;
+          font-family:  Roboto ligh;
+          color:rgba(255,255,255,0.6)
+        }
+      }
 
     }
     .controls {
       flex-basis: 34%;
       text-align: center;
       display: flex;
+      div {
+        &.playType{
+          align-self: center;
+          border-left: 1px solid rgba(255,255,255,0.2);
+          margin-left: 0px;
 
+          &.repeat{
+            border-right: 1px solid rgba(255,255,255,0.2);
+            border-left:0;
+            margin-right:0px;
+
+
+          }
+        }
+
+
+
+         #shuffle {
+          background: url('../../assets/icons/SVG/shuffle.svg') no-repeat 100%;
+          width: 24px;
+          margin-left:10px;
+
+        }
+        #repeat{
+          background: url('../../assets/icons/SVG/repeat.svg') no-repeat 100%;
+          width: 24px;
+          margin-right:10px;
+        }
+        &.container {
+          align-self: center;
+          position: relative;
+          height: 77px;
+          width: 90px;
+
+          svg {
+            height: 68px;
+            width: 68px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding: 5px 4px 4px 4px;
+            z-index: 1;
+            overflow: visible;
+            circle {
+
+              transform-origin: center;
+              transform: scale(0.31);
+              animation: pulse 2s infinite;
+              animation-timing-function: linear;
+              &:nth-child(1) {
+                animation-delay: .5s;
+              }
+              &:nth-child(2) {
+                animation-delay: 1s;
+              }
+              &:nth-child(3) {
+                animation-delay: 1.5s;
+              }
+            }
+
+          }
+
+          @keyframes pulse {
+            0% {
+              opacity: .6;
+              stroke-width: 2;
+
+              transform: scale(0.31);
+            }
+            100% {
+              opacity: 0;
+              stroke-width: 0.8;
+              transform: scale(.49);
+            }
+          }
+
+        }
+
+      }
       -webkit-justify-content: space-around;
       button {
         height: 32px;
@@ -127,12 +232,21 @@
         }
 
         &#control-playPause {
+
           height: 42px;
           width: 42px;
+          position: absolute;
+          top: 18px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          padding: 4px 4px 4px 4px;
+          z-index: 1;
+          overflow: visible;
           &.pause {
             background: url('../../assets/icons/SVG/Pause_icon.svg') no-repeat 100%;
           }
-          &.play{
+          &.play {
             background: url('../../assets/icons/SVG/play_icon.svg') no-repeat 100%;
           }
         }
@@ -141,22 +255,27 @@
           background: url('../../assets/icons/SVG/forwards_icon.svg') no-repeat 100%;
 
         }
+
+
       }
+
 
     }
     .volume {
       flex-basis: 15%;
-display: flex;
-      justify-content: flex-start;
-      img{
+      display: flex;
+      justify-content: center;
+      img {
+        height: 14px;
         margin-right: 4px;
+        flex-basis: 20px;
       }
-      #volumeBar{
+      #volumeBar {
         height: 8px;
         flex-basis: 90px;
-        background-color: rgba(255,255,255,0.28);
+        background-color: rgba(255, 255, 255, 0.28);
         border-radius: 4px;
-        #lvl{
+        #lvl {
           height: 100%;
           width: 50%;
           background: $gradient_accent;
@@ -174,7 +293,8 @@ display: flex;
       font: {
         size: 0.9rem;
         family: 'Roboto ligh';
-      };
+      }
+    ;
 
     }
 
