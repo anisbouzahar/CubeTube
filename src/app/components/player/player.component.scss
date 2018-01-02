@@ -1,0 +1,182 @@
+@import "../../../styles.scss";
+@font-face {
+  font-family: Roboto ligh;
+  src: url('../../../assets/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: Quicksand Book;
+  src: url('../../../assets/fonts/Quicksand-Regular.ttf');
+}
+
+#player-component {
+  height: 98%;
+  //resetting the default behaviour
+  button {
+    margin:0;
+    border:0;
+    padding:0;
+    display:inline-block;
+    vertical-align:middle;
+    white-space:normal;
+    background:none;
+    outline: none;
+    line-height:1;
+
+  }
+
+  //////////////////////////////
+  #progressbar {
+    background: rgba(254, 253, 255, 0.4);
+    width: 100%;
+    height: 2px;
+    display: flex;
+    flex-direction: row;
+
+    hr {
+      align-self: center;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      height: 2px;
+      background: $gradient_accent_reverse;
+      width: 80%;
+    }
+    #pin {
+      align-self: center;
+      border-radius: 50%;
+      height: 28px;
+      background: url('../../assets/icons/SVG/circle-border.svg') no-repeat center;
+      background-size: 50% auto;
+      transition: background-size .3s ease-in;
+
+      width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 2;
+      hr {
+        flex-basis: 22.6%;
+        background: rgba(218, 82, 58, 1);
+      }
+      button {
+        height: 57.1428%;
+        width: 57.1428%;
+        border-radius: 50%;
+
+        border: none;
+        background-color: $color_pink;
+        align-self: center;
+        &:active{
+          background-color: #f0705d;
+          transition: background-color 0.1s linear;
+        }
+      }
+      &:hover {
+
+        background-size: 100% auto;
+        transition: background-size .3s ease-in;
+
+      }
+      &:active{
+        background-size: 100% auto;
+        transition: background-size .3s ease-in;
+      }
+
+    }
+
+  }
+
+  #player {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+
+    div {
+      //border: 2px red solid;
+      align-self: center;
+
+    }
+    .thumbnail {
+      flex-basis: 10%;
+
+    }
+    .info {
+      flex-basis: 23%;
+
+    }
+    .controls {
+      flex-basis: 34%;
+      text-align: center;
+      display: flex;
+
+      -webkit-justify-content: space-around;
+      button {
+        height: 32px;
+        width: 32px;
+        border: 0;
+        //border-radius: 50%;
+        //border: 1px white solid;
+        align-self: center;
+        background: transparent;
+
+        &#control-backward {
+          background: url('../../assets/icons/SVG/backwards_icon.svg') no-repeat 100%;
+
+        }
+
+        &#control-playPause {
+          height: 42px;
+          width: 42px;
+          &.pause {
+            background: url('../../assets/icons/SVG/Pause_icon.svg') no-repeat 100%;
+          }
+          &.play{
+            background: url('../../assets/icons/SVG/play_icon.svg') no-repeat 100%;
+          }
+        }
+
+        &#control-forward {
+          background: url('../../assets/icons/SVG/forwards_icon.svg') no-repeat 100%;
+
+        }
+      }
+
+    }
+    .volume {
+      flex-basis: 15%;
+display: flex;
+      justify-content: flex-start;
+      img{
+        margin-right: 4px;
+      }
+      #volumeBar{
+        height: 8px;
+        flex-basis: 90px;
+        background-color: rgba(255,255,255,0.28);
+        border-radius: 4px;
+        #lvl{
+          height: 100%;
+          width: 50%;
+          background: $gradient_accent;
+          border-radius: 4px;
+        }
+      }
+    }
+    .equalizer {
+      flex-basis: 6%;
+
+    }
+    .progress {
+      flex-basis: 12%;
+      color: white;
+      font: {
+        size: 0.9rem;
+        family: 'Roboto ligh';
+      };
+
+    }
+
+  }
+}

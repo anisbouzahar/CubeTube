@@ -1,0 +1,45 @@
+<div id="player-component">
+  <div id="progressbar" (mousemove)="mouseOverProgressBar($event)">
+    <hr #progress/>
+
+    <div id="pin">
+
+      <hr/>
+      <button (mousedown)="pinDown($event)" (mouseup)="pinUp($event)"></button>
+
+    </div>
+  </div>
+  <div id="player">
+    <div class="thumbnail"></div>
+    <div class="info"></div>
+    <div class="controls">
+      <button id="control-backward">
+
+      </button>
+
+      <button id="control-playPause" (click)="playPauseFunction()" class="{{paused?'play':'pause'}}">
+
+      </button>
+      <button id="control-forward">
+
+      </button>
+
+    </div>
+    <div class="volume">
+      <img
+        src="{{volumeLvl ? './src/app/assets/icons/SVG/volume_on_icon.svg':'./src/app/assets/icons/SVG/volume_off_icon.svg'}}">
+      <div id="volumeBar" (mousemove)="setVolumeLevel($event)" (mousedown)="changeVolumeLvlDown($event)" (mouseup)="changeVolumeLvlUp($event)" >
+        <div #volumeLvl  id="lvl"></div>
+      </div>
+    </div>
+    <div class="equalizer"></div>
+    <div class="progress">0:00 / 0:00</div>
+
+
+  </div>
+
+</div>
+
+
+<!--file:///C:/Users/bouza/Desktop/CubeTube/CubeTubeng/assets/icons/SVG/volume_off_icon.svg-->
+<!--file:///C:/Users/bouza/Desktop/CubeTube/CubeTubeng/angular-electron/dist/src/app/assets/icons/SVG/volume_off_icon.svg-->

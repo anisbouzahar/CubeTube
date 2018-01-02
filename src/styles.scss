@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 $color_pink:#f63c6b;
+$color_orange:rgba(218, 82, 58, 1);
 $gradient_accent:-webkit-linear-gradient(left, rgba(218, 82, 58, 1) 0%, rgba(246, 60, 107, 1) 100%);
 $gradient_accent_reverse:-webkit-linear-gradient(right, rgba(218, 82, 58, 1) 0%, rgba(246, 60, 107, 1) 100%);
+@font-face {
+  font-family: Roboto ligh;
+  src: url('/assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: Quicksand Book;
+  src: url('/assets/fonts/Quicksand-Regular.ttf');
+}
 html, body {
   background-color: transparent;
   height: 100%;
