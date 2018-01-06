@@ -13,9 +13,9 @@
     "electron",
     "typescript",
     "sass",
-	  "youtube-dl",
-	  "outube api",
-	  "playlist"
+    "youtube-dl",
+    "outube api",
+    "playlist"
   ],
   "main": "main.js",
   "private": true,
@@ -40,6 +40,7 @@
     "e2e": "protractor ./protractor.conf.js"
   },
   "dependencies": {
+    "@angular/animations": "^5.1.3",
     "@angular/common": "5.0.3",
     "@angular/compiler": "5.0.3",
     "@angular/core": "5.0.3",

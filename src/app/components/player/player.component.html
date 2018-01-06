@@ -11,7 +11,7 @@
   </div>
   <div id="player">
     <div class="thumbnail">
-      <img src="../../../../src/app/assets/icons/SVG/default_thumbnail_icon.svg">
+      <img height="77px" h src="../../../../src/app/assets/icons/SVG/default_thumbnail_icon.svg">
 
 
     </div>
@@ -36,19 +36,22 @@ BIRDY + RHODES - Let It All Go [Official]
 
       </button>
       <div class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-          <title>pulse</title>
-          <g>
-            <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"
-                    opacity="0.1"/>
-            <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"
-                    opacity="0.2"/>
-            <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
-                    opacity="0.4"/>
+        <div  class="{{paused? 'hide':''}}">
+          <svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+            <title>pulse</title>
+            <g>
+              <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"
+                      opacity="0.1"/>
+              <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"
+                      opacity="0.2"/>
+              <circle cx="40" cy="40" r="80" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                      opacity="0.4"/>
 
 
-          </g>
-        </svg>
+            </g>
+          </svg>
+        </div>
+
 
         <button id="control-playPause" (click)="playPauseFunction()" class="{{paused?'play':'pause'}}">
 

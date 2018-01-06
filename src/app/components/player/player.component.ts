@@ -12,7 +12,7 @@ import {selector} from 'rxjs/operator/publish';
 export class PlayerComponent implements OnInit {
 
   // player properties
-  @Input() paused: boolean;
+  @Input() paused= true;
 
 
   @Input() backward = new EventEmitter();
@@ -23,7 +23,7 @@ export class PlayerComponent implements OnInit {
   @Input() total: number;
   @Input() current: number;
   @Input() volumeLvl: number;
-  @Input()volumeOn = true;
+  @Input() volumeOn = true;
   progressPinDown: boolean;
   volumeLvlChange: boolean;
 
@@ -87,7 +87,7 @@ export class PlayerComponent implements OnInit {
 
   playPauseFunction() {
     this.paused = !this.paused;
-
+    console.log(this.paused);
 
   }
 

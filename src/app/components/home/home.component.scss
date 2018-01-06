@@ -8,6 +8,8 @@
   src: url('../../../assets/fonts/Quicksand-Regular.ttf');
 }
 
+@import "../../../styles.scss";
+
 #container {
   background-color: black;
   width: 100%;
@@ -50,38 +52,60 @@
       }
     }
     #app_menu {
-      margin-top: 11px;
+      margin-top: 8px;
       ul {
         -webkit-app-region: no-drag;
         padding: 0;
         margin: 0 130px 0 0;
         display: inline;
         li {
-          display: inline;
-          margin-right: 10px;
-          padding: 0 6px 0 6px;
+          display: inline-block;
           color: white;
           font: {
             family: "Quicksand Book";
             size: 0.9em;
           }
         ;
-          cursor: pointer;
-          @for $child from 1 through 4 {
-            &:nth-child(#{$child}):hover ~ hr {
-              @if $child==2 {
-                margin-left: 83px;
-                width: 60px;
+          &:active {
+            color: #c8c4c3;
+          }
+          &:nth-child(1) {
 
-              } @else if $child==3 {
-                margin-left: 159px;
-                width: 89px;
+            margin-left: 6px;
+            margin-right: 16px;
+            width: 54px;
 
-              } @else if $child==4 {
-                margin-left: 263px;
-                width: 77px;
-              }
+          }
+          &:nth-child(2) {
 
+            margin-left: 6px;
+            margin-right: 16px;
+            width: 48px;
+            &:hover ~ hr {
+              margin-left: 76px;
+              width: 60px;
+            }
+
+          }
+          &:nth-child(3) {
+
+            margin-left: 6px;
+            margin-right: 16px;
+            width: 74px;
+            &:hover ~ hr {
+              margin-left: 146px;
+              width: 86px;
+            }
+
+          }
+          &:nth-child(4) {
+
+            margin-left: 6px;
+            margin-right: 16px;
+            width: 62px;
+            &:hover ~ hr {
+              margin-left: 240px;
+              width: 76px;
             }
 
           }
@@ -90,22 +114,60 @@
         hr {
           margin-left: 0;
           height: 2px;
-          width: 68px;
-          background: -webkit-linear-gradient(left, rgba(218, 82, 58, 1) 0%, rgba(246, 60, 107, 1) 100%);
+          width: 66px;
+          background: $gradient_accent;
           border: none;
           transition: .3s ease-in-out;
         }
       }
 
-
     }
-    #toggle-drop-down-menu{
-      -webkit-app-region: no-drag;
+    #drop-down-menu {
 
-      cursor: pointer;
+      svg.arrow-down{
+        margin-top: 8px;
+        margin-bottom: 4px;
+        fill: white;
+        z-index: 2;
+        padding: 6px;
+        position: absolute;
+        -webkit-app-region: no-drag;
+        &:active{
+          fill:#c8c4c3;
+        }
+
+      }
 
 
+      #menu{
+        height: 100px;
+        width: 34px;
+        right:26px;
+        background: rgba(255,255,255,0.4);
+        position: absolute;
+        z-index: 0;
+        border-radius: 4px ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        svg{
+          height: 20px;
+          padding: 6px;
 
+          &#app_minimize{
+            height:1.4px;
+
+          }
+
+            fill: #f4f6f9;
+
+          &:hover{
+            fill: $color_pink;
+          }
+        }
+
+
+      }
     }
 
   }
